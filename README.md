@@ -1,7 +1,7 @@
 # Collegence
 **Collegence** is a web-based platform designed to provide guidance and support for college students. This platform connects freshers and students with seniors from their college, enabling them to seek advice, mentorship, and guidance. The goal is to help students navigate their college life more effectively by offering personalized insights and peer support.
 
-**Frontend:** React, Redux, HTML5
+**Frontend:** React, Redux, HTML5<br/>
 **Backend:** Express.js, Node.js
 **Database:** MongoDB
 
