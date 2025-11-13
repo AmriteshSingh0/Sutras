@@ -9,7 +9,7 @@ import Register from "./components/Register/Register";
 import Footer from "./components/Footer/Footer";
 import Users from "./components/Users";
 import Article from "./components/Article/Article";
-
+import Profile from './components/Profile/Profile';
 
 export default function App() {
   return (
@@ -24,6 +24,7 @@ export default function App() {
           <Route path="/ai" element={<AI />} />
           <Route path="/users" element={<Users />} />
           <Route path="/article" element={<Article />} />
+          <Route path="/profile" element={<Profile />} />
         </Routes>
         <Footer />
       </BrowserRouter>

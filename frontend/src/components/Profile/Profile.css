@@ -1,0 +1,25 @@
+/* === Profile Page Styles === */
+
+/* Main container */
+.profile-container {
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+}
+
+/* Loading and error container */
+.loading-container {
+  text-align: center;
+  margin-top: 5rem;
+}
+
+/* Section: "My Connections" */
+.connections-section {
+  margin-top: 2rem;
+}
+
+/* Invitation list item layout */
+.invitation-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

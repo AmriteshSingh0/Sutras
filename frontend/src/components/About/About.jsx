@@ -9,15 +9,15 @@ const About = () => {
       <Container style={{marginTop:'3rem', textAlign:'left', marginBottom:'10rem'}}>
 
       
-      <h1>About Collegence</h1>
+      <h1>About Sutra</h1>
       <Row>
       <section className="about-collegence" style={{marginTop:'2.5rem'}}>
-        <h2 >What is Collegence?</h2>
+        <h2 >What is Sutra?</h2>
         <p>
-          Collegence is an online guide portal designed to help students
+          Sutrais an online guide portal designed to help students
           navigate through college life by providing expert guidance,
           mentorship, and resources. Whether it's academic advice, career
-          planning, or extracurricular activities, Collegence connects juniors
+          planning, or extracurricular activities, Sutraconnects juniors
           with experienced seniors to foster a supportive community.
         </p>
       </section>
@@ -26,7 +26,7 @@ const About = () => {
       <section className="about-creator" style={{marginTop:'2.5rem'}}>
         <h2>About the Creator</h2>
         <p>
-          Hi, We are team JDTS OG, the developer behind Collegence. As a student who
+          Hi, We are team JDTS OG, the developer behind Sutra. As a student who
           has experienced the ups and downs of college life, I wanted to create
           a platform where students can find answers to their questions and
           receive advice from those who have already walked the path. My

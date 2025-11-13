@@ -12,8 +12,8 @@ const Faq = () => {
         style={{backgroundColor:'rgba(255,255,255,0.25)',height:'12rem', color:'black', border:'solid 1px black', borderRadius:'2rem',padding:'2rem'}}>
             <Row>
                 <Col md={50} style={{padding:'rem', display:'grid', alignItems:'center'}}>
-                   <h2 style={{fontWeight:'600'}}>What is Collegence?</h2>
-                    <p style={{fontSize:'1.2rem', textAlign:'center'}}>Collegence is a platform designed to help college students connect with 
+                   <h2 style={{fontWeight:'600'}}>What is Sutra?</h2>
+                    <p style={{fontSize:'1.2rem', textAlign:'center'}}>Sutrais a platform designed to help college students connect with 
                         seniors for guidance on academics, projects, internships, and career 
                         paths. It aims to create a community where knowledge-sharing is easy 
                         and accessible.</p>
@@ -24,7 +24,7 @@ const Faq = () => {
         style={{backgroundColor:'rgba(255,255,255,0.25)',height:'12rem', color:'black', border:'solid 1px black', margin:'2rem 0', borderRadius:'2rem',padding:'2rem'}}>
             <Row>
                 <Col md={50} style={{padding:'rem', display:'grid', alignItems:'center'}}>
-                    <h2 style={{fontWeight:'600'}}>How do I sign up on Collegence?</h2>
+                    <h2 style={{fontWeight:'600'}}>How do I sign up on Sutra?</h2>
                     <p style={{fontSize:'1.2rem', textAlign:'center'}}>You can sign up by clicking on the "Sign Up" button on the homepage and 
                         filling in your details. You’ll need a valid college email address to 
                         complete the registration.</p>
@@ -35,8 +35,8 @@ const Faq = () => {
         style={{backgroundColor:'rgba(255,255,255,0.25)',height:'12rem', color:'black', border:'solid 1px black', margin:'2rem 0', borderRadius:'2rem',padding:'2rem'}}>
             <Row>
                 <Col md={50} style={{padding:'rem', display:'grid', alignItems:'center'}}>
-                    <h2 style={{fontWeight:'600'}}>Who can use Collegence?</h2>
-                    <p style={{fontSize:'1.2rem', textAlign:'center'}}>Collegence is open to college students from any year and alumni willing to 
+                    <h2 style={{fontWeight:'600'}}>Who can use Sutra?</h2>
+                    <p style={{fontSize:'1.2rem', textAlign:'center'}}>Sutrais open to college students from any year and alumni willing to 
                         provide mentorship and guidance. Freshers and sophomores often find it 
                         particularly helpful for academic and career-related advice.</p>
                 </Col>

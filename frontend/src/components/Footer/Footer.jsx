@@ -6,8 +6,8 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-container">
         <div className="footer-section">
-          <h4>About Collegence</h4>
-          <p>Collegence is a platform where students can seek guidance from seniors, access resources, and make informed decisions about their college life.</p>
+          <h4>About Sutra</h4>
+          <p>Sutra is a platform where students can seek guidance from seniors, access resources, and make informed decisions about their college life.</p>
         </div>
         <div className="footer-section">
           <h4>Quick Links</h4>
@@ -28,7 +28,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="footer-bottom">
-        <p>© 2024 Collegence. All rights reserved.</p>
+        <p>© 2024 Sutra. All rights reserved.</p>
       </div>
     </footer>
   );

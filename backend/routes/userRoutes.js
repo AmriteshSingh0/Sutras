@@ -30,6 +30,7 @@ router.post('/loginuser', async (req, res) => {
         if (user) {
             if(user){
                 const currentUser = {
+                    _id: user._id,
                     name: user.name,
                     email: user?.email,
                     college: user?.college,
@@ -205,5 +206,82 @@ router.get('/searchCollege', async (req, res) => {
       res.status(500).json({ message: 'Server error' });
     }
   });
+
+  router.get('/getuser/:userId', async (req, res) => {
+    const { userId } = req.params;
+    try {
+        // We .populate('connections') to get the full user details, not just IDs
+        const user = await userModel.findById(userId).populate('connections');
+        if (!user) {
+            return res.status(404).json({ message: 'User not found' });
+        }
+        res.status(200).send(user); 
+    } catch (error) {
+        res.status(500).json({ message: 'Server error' });
+    }
+});
+
+// --- ROUTE 2: Gets all pending invitations for the user ---
+router.get('/get-invitations/:userId', async (req, res) => {
+    try {
+        const user = await userModel.findById(req.params.userId)
+                                     .populate('invitationsReceived'); // Gets full user details for each invitation
+        if (!user) {
+            return res.status(404).json({ message: 'User not found' });
+        }
+        res.status(200).send(user.invitationsReceived);
+    } catch (error) {
+        res.status(500).json({ message: 'Error fetching invitations' });
+    }
+});
+
+// --- ROUTE 3: Handles the "Accept" button click ---
+router.post('/accept-invitation', async (req, res) => {
+    // receiverId = me (the logged-in user)
+    // senderId = the person who sent the invite
+    const { receiverId, senderId } = req.body; 
+
+    try {
+        const receiver = await userModel.findById(receiverId);
+        const sender = await userModel.findById(senderId);
+
+        // 1. Remove invitation from "pending" lists
+        receiver.invitationsReceived.pull(senderId);
+        sender.invitationsSent.pull(receiverId);
+
+        // 2. Add to "connections" lists for both users
+        receiver.connections.push(senderId);
+        sender.connections.push(receiverId);
+
+        await receiver.save();
+        await sender.save();
+
+        res.status(200).send('Invitation accepted');
+    } catch (error) {
+        res.status(500).json({ message: 'Error accepting invitation' });
+    }
+});
+
+router.post('/send-invitation', async (req, res) => {
+    // senderId = me (the logged-in user)
+    // receiverId = the person I am clicking "Join" on
+    const { senderId, receiverId } = req.body; 
+
+    try {
+        const sender = await userModel.findById(senderId);
+        const receiver = await userModel.findById(receiverId);
+
+        // Add invitation to both users
+        sender.invitationsSent.push(receiverId);
+        receiver.invitationsReceived.push(senderId);
+
+        await sender.save();
+        await receiver.save();
+        
+        res.status(200).send('Invitation sent successfully');
+    } catch (error) {
+        res.status(500).json({ message: 'Error sending invitation' });
+    }
+});
 
 export default router;
