@@ -1,0 +1,62 @@
+import React, { useState, useEffect } from 'react';
+import io from 'socket.io-client';
+import axios from 'axios';
+
+const socket = io('http://localhost:5000'); // Backend server URL
+
+const App = () => {
+    const [message, setMessage] = useState('');
+    const [chat, setChat] = useState([]);
+    const [user, setUser] = useState('User1'); // Can switch between User1 and User2
+
+    useEffect(() => {
+        // Listen for new messages from the server
+        socket.on('receiveMessage', (newMessage) => {
+            setChat((prevChat) => [...prevChat, newMessage]);
+        });
+
+        // Fetch chat history
+        axios.get('http://localhost:5000/api/messages').then((response) => {
+            setChat(response.data);
+        });
+    }, []);
+
+    const sendMessage = () => {
+        const messageData = { sender: user, receiver: user === 'User1' ? 'User2' : 'User1', content: message };
+        socket.emit('sendMessage', messageData);
+        setMessage(''); // Clear the input field
+    };
+
+    return (
+        <div>
+            <h1>Chat App</h1>
+            <div>
+                <label>
+                    Your Username:
+                    <select value={user} onChange={(e) => setUser(e.target.value)}>
+                        <option value="User1">User1</option>
+                        <option value="User2">User2</option>
+                    </select>
+                </label>
+            </div>
+            <div className="chat-box">
+                {chat.map((msg, index) => (
+                    <div key={index}>
+                        <strong>{msg.sender}:</strong> {msg.content}
+                    </div>
+                ))}
+            </div>
+            <div>
+                <input
+                    type="text"
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                    placeholder="Type a message"
+                />
+                <button onClick={sendMessage}>Send</button>
+            </div>
+        </div>
+    );
+};
+
+export default App;

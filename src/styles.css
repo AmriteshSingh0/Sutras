@@ -1,0 +1,25 @@
+
+body{
+  background-image: url("bg.png");
+  background-position: center;
+  background-size: cover;
+  font-family: "Poppins", system-ui;
+
+}
+
+.poppins-thin {
+  font-family: "Poppins", system-ui;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.poppins-regular {
+  font-family: "Poppins", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.App {
+  font-family: sans-serif;
+  /* text-align: center; */
+}

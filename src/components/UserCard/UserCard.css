@@ -1,0 +1,86 @@
+.user-card {
+  width: 18rem;
+  height: max-content;
+  margin: 1rem;
+  border-radius: 16px;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  color: #fff;
+  transition: all 0.3s ease-in-out;
+  text-align: center;
+}
+
+.user-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
+}
+
+.user-card-body {
+  padding: 1.5rem;
+}
+
+.user-card-title {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.user-card-text {
+  text-align: left;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  color: #e8e8e8;
+  font-weight: 400;
+}
+
+.user-card-text strong {
+  color: #0a0101;
+  font-weight: 600;
+}
+
+.user-card-button-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1rem;
+}
+
+.user-card-button {
+  min-width: 90px;
+  font-weight: 500;
+  background: linear-gradient(135deg, #4b6cb7 0%, #182848 100%);
+  border: none;
+  border-radius: 6px;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.user-card-button:disabled {
+  background: #555;
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.user-card-button:not(:disabled):hover {
+  transform: scale(1.07);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+}
+
+/* 🌐 Responsive Design */
+@media (max-width: 768px) {
+  .user-card {
+    width: 100%;
+    margin: 0.5rem 0;
+  }
+}
+.user-card strong {
+    color: #000000;
+}
+.user-card p {
+    color: #000000;
+    margin: 0.4rem 0;
+}
