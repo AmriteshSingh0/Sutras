@@ -1,0 +1,14 @@
+label{
+    margin-right: 2rem;
+    width: 3rem;
+    text-align: left;
+}
+
+input{
+    width: 17rem;
+    padding: 0.5rem 0.8rem;
+    margin: 0.3rem;
+    outline: none;
+    border-radius: 2rem;
+    border: 0cap;
+}

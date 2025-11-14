@@ -1,0 +1,72 @@
+h1 {
+  font-weight: 800;
+}
+
+h3 {
+  font-weight: 600;
+}
+
+.input-text {
+  border-radius: 8px;
+  padding: 0.7rem 1rem;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.input-text:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.4);
+}
+
+.user-card {
+  background: rgba(255, 255, 255, 0.15); /* translucent white */
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 20px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  color: #fff;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  height: 100%;
+}
+
+.user-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.user-card h4 {
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.user-card p {
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0.4rem 0;
+}
+
+.user-card strong {
+  color: #fff;
+}
+
+.user-card button {
+  background: linear-gradient(135deg, #006aff, #0095ff);
+  border: none;
+  border-radius: 12px;
+  padding: 0.7rem 1rem;
+  color: #fff;
+  font-weight: 600;
+  margin-top: 1rem;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.user-card button:hover {
+  background: linear-gradient(135deg, #007bff, #00c6ff);
+  transform: scale(1.05);
+}
