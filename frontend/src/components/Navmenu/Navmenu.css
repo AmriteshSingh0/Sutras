@@ -1,102 +1,235 @@
-/* ✨ Frosted Glass Navbar */
+/* ========================================
+   🎨 Premium Light Glassmorphism Navbar
+   ======================================== */
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/* ========================================
+   🌈 Global Styles
+   ======================================== */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #e8f0ff, #f9f7ff);
+  min-height: 100vh;
+  overflow-x: hidden;
+  color: #1a1a1a;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ========================================
+   🎭 Navbar Container
+   ======================================== */
 .navbar {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.45) !important;
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  border-radius: 14px;
-  padding: 1rem 2.5rem;
-  margin: 1rem 2rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  transition: background 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.35) !important;
+  border-radius: 16px;
+  padding: 1rem 2.5rem !important;
+  margin: 1.5rem 2rem;
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
 }
 
-/* subtle hover glow */
-.navbar:hover {
-  background: rgba(255, 255, 255, 0.18);
-  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15);
+/* Animated subtle border gradient */
+.navbar::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(45deg, #c4b5fd, #8ab4f8, #c4b5fd);
+  border-radius: 16px;
+  opacity: 0;
+  z-index: -1;
+  animation: borderRotate 4s linear infinite;
+  background-size: 300% 300%;
+  transition: opacity 0.4s ease;
 }
 
-/* 🌈 Glass gradient background (for full page look) */
-body {
-  background: radial-gradient(circle at 30% 30%, #c3a2ff, #9fd8ff, #e3f0ff);
-  min-height: 100vh;
-  font-family: "Poppins", sans-serif;
-  color: #333;
-  overflow-x: hidden;
+@keyframes borderRotate {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-/* 🖼️ Logo */
+.navbar:hover::before {
+  opacity: 1;
+}
+
+/* ========================================
+   🖼️ Logo
+   ======================================== */
 .logo {
-  width: 9rem;
-  transition: transform 0.3s ease;
+  height: 50px;
+  width: auto;
+  max-width: 180px;
+  transition: all 0.4s ease;
+  filter: drop-shadow(0 2px 6px rgba(102, 126, 234, 0.2));
+  cursor: pointer;
 }
 
 .logo:hover {
-  transform: scale(1.05);
+  transform: scale(1.08);
+  filter: drop-shadow(0 4px 12px rgba(102, 126, 234, 0.4));
 }
 
-/* 🔗 Navbar links */
+/* ========================================
+   🔗 Nav Links
+   ======================================== */
 .navbar .nav-link {
-  color: #2b2b2b;
-  font-weight: 500;
-  margin-right: 1.5rem;
-  transition: color 0.3s ease, transform 0.3s ease;
+  color: #1a1a1a !important;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  margin-right: 0.5rem;
+  padding: 0.6rem 1.2rem !important;
+  border-radius: 10px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.navbar .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+
+.navbar .nav-link:hover::after {
+  width: 70%;
 }
 
 .navbar .nav-link:hover {
-  color: #4a90e2;
-  transform: translateY(-1px);
+  color: #4a4eff !important;
+  background: rgba(102, 126, 234, 0.1);
+  transform: translateY(-2px);
 }
 
-/* 🧊 Search Input (optional if using it under navbar) */
-.input-text {
-  outline: none;
-  background: rgba(255, 255, 255, 0.35);
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  color: #333;
-  border-radius: 25px;
-  width: 22rem;
-  padding: 0.6rem 1rem;
-  margin-right: 3rem;
+/* Active link */
+.navbar .nav-link.active {
+  color: #5f6bff !important;
+  background: rgba(102, 126, 234, 0.15);
+  font-weight: 700;
+  border: 1px solid rgba(102, 126, 234, 0.3);
+}
+
+/* ========================================
+   👤 Profile & Auth Buttons
+   ======================================== */
+.navbar .nav-link[href="/profile"] {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.15), rgba(118, 75, 162, 0.15));
+  border: 1px solid rgba(102, 126, 234, 0.3);
+  color: #4a4eff !important;
+}
+
+.navbar .nav-link[href="/profile"]:hover {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.25), rgba(118, 75, 162, 0.25));
+  transform: translateY(-3px);
+}
+
+.navbar .nav-link[href="/register"] {
+  background: rgba(102, 126, 234, 0.12);
+  border: 1px solid rgba(102, 126, 234, 0.25);
+  color: #4a4eff !important;
+}
+
+.navbar .nav-link[href="/register"]:hover {
+  background: rgba(102, 126, 234, 0.22);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.25);
+}
+
+/* ========================================
+   🚪 Logout
+   ======================================== */
+.navbar .nav-link:has(svg) {
+  color: #e23e57 !important;
+  border: 1px solid rgba(226, 62, 87, 0.3);
+}
+
+.navbar .nav-link:has(svg):hover {
+  background: rgba(226, 62, 87, 0.15);
+  color: #fff !important;
+  box-shadow: 0 4px 12px rgba(226, 62, 87, 0.25);
+}
+
+/* ========================================
+   🍔 Mobile Menu
+   ======================================== */
+.navbar-toggler {
+  border: 2px solid rgba(102, 126, 234, 0.5) !important;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.4) !important;
+  padding: 0.5rem 0.75rem;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.input-text::placeholder {
-  color: rgba(0, 0, 0, 0.5);
+.navbar-toggler:hover {
+  background: rgba(102, 126, 234, 0.2) !important;
+  transform: scale(1.05);
 }
 
-.input-text:focus {
-  background: rgba(255, 255, 255, 0.5);
-  box-shadow: 0 0 10px rgba(0, 198, 255, 0.4);
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(102, 126, 234, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2.5' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
 }
 
-/* 🚪 Logout icon */
-.navbar .nav-link svg {
-  vertical-align: middle;
-  margin-left: 5px;
-  transition: transform 0.2s ease;
-}
-
-.navbar .nav-link:hover svg {
-  transform: rotate(-15deg);
-}
-
-/* 📱 Responsive behavior */
-@media (max-width: 768px) {
+/* Mobile collapse */
+@media (max-width: 991px) {
   .navbar {
-    padding: 0.8rem 1rem;
-    margin: 0.5rem;
-    border-radius: 10px;
+    margin: 1rem;
+    border-radius: 12px;
   }
 
-  .logo {
-    width: 8rem;
+  .navbar-collapse {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    padding: 1.2rem;
+    margin-top: 1rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
   }
 
-  .input-text {
-    width: 100%;
-    margin: 0.5rem 0;
+  .navbar .nav-link {
+    margin: 0.4rem 0;
+    padding: 0.8rem 1rem !important;
   }
+}
+
+/* ========================================
+   ✨ Extras
+   ======================================== */
+::selection {
+  background: rgba(102, 126, 234, 0.3);
+  color: #1a1a1a;
+}
+
+a, button {
+  transition: all 0.3s ease;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(102, 126, 234, 0.4);
+  border-radius: 5px;
 }
